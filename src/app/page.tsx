@@ -1,103 +1,92 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+    <div className="bg-orange-500 min-h-screen flex items-center justify-center p-4">
+      <section className="w-full max-w-2xl bg-gray-300 rounded-xl shadow-2xl overflow-hidden flex relative">
+        <span className="absolute -top-3 left-[183px] w-6 h-6 bg-orange-500 rounded-full"></span>
+        <span className="absolute -bottom-3 left-[183px] w-6 h-6 bg-orange-500 rounded-full"></span>
+        <span className="absolute top-6 bottom-6 left-[193px] border-l-2 border-dashed border-orange-500"></span>
+        <section className="w-48 bg-gray-300 p-6 flex items-center justify-center relative">
+          <img
+            src="/QR.png"
+            alt="QR Code"
+            className="w-45 h-45 object-contain"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </section>
+        <section className="flex-1 p-6 relative">
+          <section className="flex items-center justify-between mb-6">
+            <span>
+              <p className="text-sm text-black mb-1">Mumbai,</p>
+              <p className="text-sm text-black mb-1">India</p>
+              <h2 className="text-4xl font-bold text-gray-800">BOM</h2>
+              <p className="text-xs text-gray-500 mt-1">
+                Wed, July 27<sup>th</sup>
+              </p>
+              <p className="text-xs text-gray-500">1:00 AM</p>
+            </span>
+            <span className="flex items-center px-8">
+              <span className="flex space-x-1">
+                {Array(8).fill(0).map((_, i) => (
+                  <span key={i} className="w-1 h-1 bg-gray-400 rounded-full"></span>
+                ))}
+              </span>
+              <span className="mx-2">
+                <svg
+                  className="w-6 h-6 text-gray-600 transform rotate-90"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                </svg>
+              </span>
+              <span className="flex space-x-1">
+                {Array(8).fill(0).map((_, i) => (
+                  <span key={i} className="w-1 h-1 bg-gray-400 rounded-full"></span>
+                ))}
+              </span>
+            </span>
+            <span className="text-right">
+              <p className="text-sm text-black mb-1">Amsterdam,</p>
+              <p className="text-sm text-black mb-1">Netherlands</p>
+              <h2 className="text-4xl font-bold text-gray-800">AMS</h2>
+              <p className="text-xs text-gray-500 mt-1">
+                Thu, July 27<sup>th</sup>
+              </p>
+              <p className="text-xs text-gray-500">8:30 AM</p>
+            </span>
+          </section>
+          <section className="flex justify-between text-sm">
+            <span>
+              <p className="text-gray-400 text-xs mb-1">Passenger</p>
+              <p className="font-medium text-gray-800 ">Nikita Sharma</p>
+            </span>
+            <span>
+              <p className="text-gray-400 text-xs mb-1">Seat</p>
+              <p className="font-medium text-gray-800">4A</p>
+            </span>
+            <span>
+              <p className="text-gray-400 text-xs mb-1">Terminal</p>
+              <p className="font-medium text-gray-800">D</p>
+            </span>
+            <span>
+              <p className="text-gray-400 text-xs mb-1">Gate</p>
+              <p className="font-medium text-gray-800">32</p>
+            </span>
+            <span>
+              <p className="text-gray-400 text-xs mb-1">Boarding</p>
+              <p className="font-medium text-gray-800">12:40 PM</p>
+            </span>
+          </section>
+        </section>
+        <section className="w-14 bg-blue-900 text-white flex flex-col items-center relative py-13">
+          <span className="transform -rotate-90 whitespace-nowrap mb-4">
+            <p className="text-xs font-light">Boarding Pass</p>
+          </span>
+          <span className="w-3 h-5  bg-yellow-400 rounded-full transform rotate-45 mt-10"></span>
+          <span className="absolute bottom-10 transform -rotate-90 whitespace-nowrap">
+            <p className="text-xs font-light">JET AIRWAYS</p>
+          </span>
+        </section>
+      </section>
     </div>
   );
 }
